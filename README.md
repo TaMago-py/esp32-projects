@@ -19,7 +19,7 @@ In this repository I'll be uploading some __tests__ I make to __learn__ how to u
 
 Just a __light__, turning __on__ and __off__. I also made this one for seeing if the ___esp32___ was in __good condition__. I'm learning the basics with the "__random nerd tutorials__" website.
 
-I can't scale the video, ___wait___.
+I can't scale the video... ___Just wait___.
 
 <video src="https://github.com/user-attachments/assets/61d83124-657f-49e2-863e-b82059242ff7"></video>
 
