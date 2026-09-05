@@ -1,0 +1,58 @@
+            Happy birthday 
+
+int tempo = 120;
+int beat = 60000 / tempo;
+
+const int melody[] = {C, C, D, C, F, E,
+                C, C, D, C, G, F,
+                C, C, C, A, F, E, D,
+                AS, AS, A, F, G, F};
+
+const int total_notes = sizeof(melody) / sizeof(melody[0]);
+
+const float lengths[total_notes] = {0.75, 0.25, 1, 1, 1, 2,
+                 0.75, 0.25, 1, 1, 1, 2,
+                 0.75, 0.25, 1, 1, 1, 1, 1,
+                 0.75, 0.25, 1, 1, 1, 2};
+
+const int octaves[total_notes] = {4, 4, 4, 4, 4, 4,
+                 4, 4, 4, 4, 4, 4, 
+                 4, 4, 5, 4, 4, 4, 4,
+                 4, 4, 4, 4, 4, 4};
+
+const char* lyrics[total_notes] = {"cumpleanos feliz", "", "", "", "", "",
+                        "te deseamos a ti", "", "", "", "", "",
+                        "feliz cumpleanos", "", "", "", "/inserte nombre/", "", "",
+                        "que los cumplas feliz ^.^", "", "", "", "", ""};
+
+
+            Lavender town
+
+const int tempo = 120;
+const int beat = 60000 / tempo;
+
+const int melody[] = {C, G, B, FS, C, G, B, FS, C, G, B, FS, C, G, B, FS, 
+                      G, G, FS, F, G, FS, E, B, E, CS, B, E,
+                      G, G, FS, F, B, G, FS, B, E, C, B, E,
+                      G, G, FS, F, G, FS, E, B, E, CS, B, E,
+                      G, G, FS, F, B, G, FS, B, C, C,
+                      C, G, B, FS, C, G, B, FS, C, G, B, FS, E, C, B, E
+                      };
+
+const int total_notes = sizeof(melody) / sizeof(melody[0]);
+                
+const float lengths[total_notes] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1,
+                                    2, 2, 2, 2, 1, 1, 1, 1, 2, 2,
+                                    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+
+const int octaves[total_notes] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                                  4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4,
+                                  4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4,
+                                  4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4,
+                                  4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+                                  5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 4};
+
+const char* lyrics[total_notes] = {"Lavender town"};
