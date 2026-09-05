@@ -55,6 +55,11 @@ void setup() {
   else {
 
     display.invertDisplay(false);
+
+    // I added this because sometimes the screen just stayed white.
+    // It happened if I changed 'invert' from 'y' to 'n'
+    display.clearDisplay();
+    display.display();
   }
 }
 
