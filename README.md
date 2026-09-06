@@ -2,7 +2,7 @@
 
 I just __bought__ a ___esp32___ 😼
 
-  <img width="25%" alt="esp32 kit" src="https://github.com/user-attachments/assets/a6133f0c-3a90-4e00-8767-fb2584d9a651"/> <img width="25%" alt="IMG_20260904_000650" src="https://github.com/user-attachments/assets/2280c655-d101-4e11-948e-a95eba79b4a4"/>
+<img width="25%" alt="esp32 kit" src="https://github.com/user-attachments/assets/d9da7758-6a6e-48f2-b4a1-d69f889e49b6"/> <img width="25%" alt="IMG_20260904_000650" src="https://github.com/user-attachments/assets/eb9ae482-0408-4efa-af59-47658d94599b"/>
 
 Hope I don't __fry it__ by __accident__.
 
@@ -21,7 +21,7 @@ Just a __light__, turning __on__ and __off__. I also made this one for seeing if
 
 I can't scale the video, ___wait___.
 
-<video src="https://github.com/user-attachments/assets/b517d86b-9b2e-4434-9030-e8eccf4fd7d2"></video>
+<video src="https://github.com/user-attachments/assets/61d83124-657f-49e2-863e-b82059242ff7"></video>
 
 ### rgb_light_video
 
@@ -31,19 +31,19 @@ If a color reaches a value of 255, it starts to __decrease__ while the next numb
 
 This way, it goes from __red__ to __green__, from __green__ to __blue__ and from __blue__ to __red__.
 
-<video src="https://github.com/user-attachments/assets/832be47f-81a9-4893-8e68-5e6b8910e62c"></video>
+<video src="https://github.com/user-attachments/assets/742720c2-be79-4923-9f10-aa77bf7c571c"></video>
 
 ### screen_test
 
 First, I simply printed a "___Hello world___" on the screen.
 
-<img width="50%" alt="Hello world" src="https://github.com/user-attachments/assets/30826160-6303-4d0f-a4ef-c00fc241adfb"/>
+<img width="50%" alt="Hello world" src="https://github.com/user-attachments/assets/1cde02f0-7781-40e6-8036-6a82330577d8"/>
 
 I discovered I __liked__ the __screen__ very much, it's __funny__ to use, so I made something more __complex__.
 
 I used some ___linear algebra___ to make a __rotating cube__. The essentials were the __rotation__ of the vertices and their __projections__ on the 2D screen. Speaking of that, I went to the __regional math olympiads__! I will upload __my results__ once i have them 😼
 
-<video src="https://github.com/user-attachments/assets/698d464e-7af9-477f-9f71-6d2bad5e2f11"></video>
+<video src="https://github.com/user-attachments/assets/f1aafe3c-6bb0-4dcb-a77b-83ce36241016"></video>
 
 ### buzzer_test
 
@@ -55,7 +55,7 @@ here's my __favorite__ one. It doesn't have lyrics, but I made a __banner__ with
 
 Sorry if the volume is too low.
 
-<video src="https://github.com/user-attachments/assets/b3b416e1-7486-4b30-9d11-a8e80bcee2fa"></video>
+<video src="https://github.com/user-attachments/assets/08abfbb8-1e71-42f5-a69b-dad7a01b6306"></video>
 
 ### sensor_test
 
@@ -65,10 +65,9 @@ I also wanted to try the '___millis()___' function, so, I made that the led __ch
 
 Here I tried the ___fotorresistor sensor___.
 
-<video src="https://github.com/user-attachments/assets/9422f293-4075-454d-8496-3fec8632d487"></video>
+<video src="https://github.com/user-attachments/assets/a2a652c4-89d1-4543-9be4-3d93a7e78c2d"></video>
 
 <br>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll">
 </p>
-
