@@ -62,6 +62,7 @@ void setup() {
   display.setTextSize(1);
   display.setTextColor(WHITE);
 
+  // I had to use ledc because it didn't worked with note or analogWrite.
   ledcSetup(channel, 2000, 8);
   ledcAttachPin(pin_buzzer, channel);
 

@@ -10,8 +10,7 @@ const int filter = 500;
 
 void setup()
 {
-
-  Serial.begin(115200);
+  
   pinMode(light_sensor, INPUT);
   pinMode(led_pin, OUTPUT);
 }
