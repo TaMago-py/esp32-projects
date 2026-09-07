@@ -9,6 +9,17 @@
 
 bool visible(int vertex_0, int vertex_1, int vertex_2);
 
+const int pin_button_invert = 18;
+const int pin_button_solid = 19;
+
+const int pin_potentiometer = 35;
+
+int button_state_invert;
+int last_button_state_invert;
+
+int button_state_solid;
+int last_button_state_solid;
+
 // Not sure if I must call it "screen" or "display" tbh. ok I looked up, it's display.
 Adafruit_SSD1306 display(WIDTH, HEIGHT, &Wire, -1);
 
@@ -34,38 +45,59 @@ const int faces[6][4] {
 float angle_x = 0.0;
 float angle_y = 0.0;
 
-// 'y' for white screen, 'n' for black screen.
-const char invert = 'n';
+// 'true' for white screen, 'false' for black screen.
+bool invert = false;
 
-// "y" for a faced cube, 'n' for just the edges.
-const char solid = 'n';
+// "true" for a faced cube, 'false' for just the edges.
+bool solid = false;
+
+int distance;
 
 void setup() {
 
+  pinMode(pin_potentiometer, INPUT);
+
+  pinMode(pin_button_invert, INPUT_PULLUP);
+  pinMode(pin_button_solid, INPUT_PULLUP);
+
+  button_state_invert = digitalRead(pin_button_invert);
+  button_state_solid = digitalRead(pin_button_solid);
+  
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-   
+    
     for(;;);
   }
-
-  if (invert == 'y') {
-
-    display.invertDisplay(true);
-  }
-
-  else {
-
-    display.invertDisplay(false);
-
+    
     // I added this because sometimes the screen just stayed white.
     // It happened when I changed 'invert' from 'y' to 'n'
     display.clearDisplay();
     display.display();
-  }
 }
 
 void loop() {
 
+  display.invertDisplay(invert);
+  
   display.clearDisplay();
+  
+  int potentiometer_value = analogRead(pin_potentiometer);
+  distance = map(potentiometer_value, 0, 4095, 50, 250);
+  
+  last_button_state_invert = button_state_invert;
+  last_button_state_solid = button_state_solid;
+
+  button_state_invert = digitalRead(pin_button_invert);
+  button_state_solid = digitalRead(pin_button_solid);
+
+  if (last_button_state_invert == HIGH && button_state_invert == LOW) {
+
+    invert = !invert;
+  }
+
+  if (last_button_state_solid == HIGH && button_state_solid == LOW) {
+
+    solid = !solid;
+  }
 
   for (int i = 0; i < 8; i++) {
 
@@ -85,11 +117,11 @@ void loop() {
     float z2 = y * sin(angle_x) + z1 * cos(angle_x);
 
     // the 3D vectors projection into 2D.
-    vertices2D[i][0] = (int)(x1 * 60 / (z2 + 100)) + 64;
-    vertices2D[i][1] = (int)(y2 * 60 / (z2 + 100)) + 32;
+    vertices2D[i][0] = (int)(x1 * 60 / (z2 + distance)) + 64;
+    vertices2D[i][1] = (int)(y2 * 60 / (z2 + distance)) + 32;
   }
   
-  if (solid == 'y') {
+  if (solid) {
     
     for (int j = 0; j < 6; j++) {
       

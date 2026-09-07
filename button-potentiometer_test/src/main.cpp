@@ -1,14 +1,14 @@
 #include <Arduino.h>
 
-int pin_button_r = 27;
-int pin_button_g = 33;
-int pin_button_b = 32;
+const int pin_button_r = 27;
+const int pin_button_g = 33;
+const int pin_button_b = 32;
 
-int pin_led_r = 18;
-int pin_led_g = 19;
-int pin_led_b = 23;
+const int pin_led_r = 18;
+const int pin_led_g = 19;
+const int pin_led_b = 23;
 
-int pin_potentiometer = 35;
+const int pin_potentiometer = 35;
 
 int last_r;
 int last_g;
