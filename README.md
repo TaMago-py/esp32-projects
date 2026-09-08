@@ -8,6 +8,8 @@ Hope I don't __fry it__ by __accident__.
 
 In this repository I'll be uploading some __tests__ I make to __learn__ how to use it.
 
+Also, there's more specific __documentation__ for each test in its respective __folder__.
+
 ## projects
 
 <br>
