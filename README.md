@@ -67,6 +67,16 @@ Here I tried the ___fotorresistor sensor___.
 
 <video src="https://github.com/user-attachments/assets/a2a652c4-89d1-4543-9be4-3d93a7e78c2d"></video>
 
+### button-potentiometer_test
+
+I just learned how to use the __buttons__ and the ___potentiometer___ to __interact__ with the esp32, and that just means my next project might be a __game__ 😼
+
+Anyway, here I use them to __interact__ with the rgb led's __colors__.
+
+I can __change__ a color's __value__ by pushing its respective button and using the potentiometer.
+
+<video src="https://github.com/user-attachments/assets/90aaab43-b3ab-49b1-8dd5-ccf0132efcc7"></video>
+
 <br>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll">
