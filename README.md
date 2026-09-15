@@ -79,6 +79,14 @@ I can __change__ a color's __value__ by pushing its respective button and using 
 
 <video src="https://github.com/user-attachments/assets/90aaab43-b3ab-49b1-8dd5-ccf0132efcc7"></video>
 
+### Relay and connectivity
+
+So... I __don't know__ what to do with these.
+
+For now I __can't__ really do __anything__ with the relay aside from turning it on, and on the __connectivity__'s side, I just tried connecting to __BLE__, but also any project idea.
+
+If I come up with anything for these two I will __upload__ it in its __own__ repository.
+
 <br>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll">
