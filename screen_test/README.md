@@ -9,18 +9,32 @@
   <img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll"><img src="https://github.com/user-attachments/assets/e644b557-1192-4abd-b840-029e6ed06d8a" width="25%" alt="TaMago-roll">
 </p>
 
-### Brief comments
+### What does it do?
 
-Good news, I just discovered that you can use ___LaTeX___ on ___markdown___.
+Displays a __rotating 3D cube__ on the screen. You can __interact__ with with the animation via buttons and potentiometer.
 
-This is the __first__ README I'm writing for a __specific__ project. As I'm learning I want to do this more __academic__ than tecnical, so I will explain my __process__ rather than anything.
+The interactions with the program are as follows:
+
++ Button on pin 18 toggles __inverted__ colors.
++ Button on pin 19 toggles the __solid__ mode for the cube.
++ Potentiometer on pin 35 serves to change the cube's __distance__ to the screen.
 
 ### Tools
 
++ ![Adafruit](https://img.shields.io/badge/Adafruit-%23000000.svg?style=for-the-badge&logo=adafruit&logoColor=white)
 + ![Arduino](https://img.shields.io/badge/Arduino-%2300979D.svg?style=for-the-badge&logo=Arduino&logoColor=white)
 + ![C++](https://img.shields.io/badge/c%2B%2B-%2300599C.svg?style=for-the-badge&logo=cplusplus&logoColor=white)
 + ![Espressif](https://img.shields.io/badge/espressif-%23E7352C.svg?style=for-the-badge&logo=espressif&logoColor=white)
 + ![PlatformIO](https://img.shields.io/badge/platformio-%23000.svg?style=for-the-badge&logo=platformio&logoColor=F5822A)
 
-### What does it do?
+### specifications
+
+This program was __made__ with:
+
++ Adafruit's ___SSD1306___ oled screen.
++ Espressif's ___ESP-WROOM-32___.
+
+I used PlatformIO as my framework, using Arduino's library.
+
+### Circuit
 
