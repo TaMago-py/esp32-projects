@@ -38,13 +38,13 @@ I used ___PlatformIO___ as my framework, using ___Arduino___'s library.
 
 ### Procedure
 
-> For it to be (in my opinion) easier to read, __I made sections for every part__ I had to make.
+> __Divided into sections__. Every section is an important individual part of the code.
 
 <details>
   <summary> Cube's vertices and 3D space orientation </summary>
   <br>
 
-  The first part was to represent the cube's vertices, like this part on my code:
+  The first step was to represent the cube's vertices:
 
   ``` c++
 
