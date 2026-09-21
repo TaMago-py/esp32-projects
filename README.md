@@ -1,6 +1,6 @@
 # esp32-projects
 
-I just __bought__ a ___esp32___ 😼
+I just __bought__ an ___esp32___ 😼
 
 <img width="25%" alt="esp32 kit" src="https://github.com/user-attachments/assets/d9da7758-6a6e-48f2-b4a1-d69f889e49b6"/> <img width="25%" alt="IMG_20260904_000650" src="https://github.com/user-attachments/assets/eb9ae482-0408-4efa-af59-47658d94599b"/>
 
