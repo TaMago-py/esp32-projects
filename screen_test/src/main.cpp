@@ -1,27 +1,25 @@
+// This code renders a 3D rotating cube using vertices and linear algebra.
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <math.h>
 
+//      --- Constants ---
+
 #define WIDTH 128
 #define HEIGHT 64
 
+const int PIN_BUTTON_INVERT = 18;
+const int PIN_BUTTON_SOLID = 19;
+
+const int PIN_POTENTIOMETER = 35;
+
+//      --- Fuctions ---
+
 bool visible(int vertex_0, int vertex_1, int vertex_2);
 
-const int pin_button_invert = 18;
-const int pin_button_solid = 19;
-
-const int pin_potentiometer = 35;
-
-int button_state_invert;
-int last_button_state_invert;
-
-int button_state_solid;
-int last_button_state_solid;
-
-// Not sure if I must call it "screen" or "display" tbh. ok I looked up, it's display.
-Adafruit_SSD1306 display(WIDTH, HEIGHT, &Wire, -1);
+//      --- Cube ---
 
 // vertices of a cube.
 const float vertices[8][3] = {
@@ -42,6 +40,11 @@ const int faces[6][4] {
   {4, 5, 1, 0},
 };
 
+//      --- Initial Configuration ---
+
+// Not sure if I must call it "screen" or "display" tbh. ok I looked up, it's display.
+Adafruit_SSD1306 display(WIDTH, HEIGHT, &Wire, -1);
+
 float angle_x = 0.0;
 float angle_y = 0.0;
 
@@ -51,7 +54,15 @@ bool invert = false;
 // "true" for a faced cube, 'false' for just the edges.
 bool solid = false;
 
+int button_state_invert;
+int last_button_state_invert;
+
+int button_state_solid;
+int last_button_state_solid;
+
 int distance;
+
+//      --- Program ---
 
 void setup() {
 
