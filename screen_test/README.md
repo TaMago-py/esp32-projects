@@ -39,7 +39,7 @@ Built with:
 > __Divided into sections__. Every section is an important individual part of the code.
 
 <details>
-  <summary> Cube's vertices and 3D space orientation </summary>
+  <summary> 3D Cube Data </summary>
   <br>
 
   The first step was to represent the cube's vertices:
@@ -59,3 +59,17 @@ First I draw the 3D space as it is supposed to be in a screen, with the $y$ axis
 
 </details>
 
+<details>
+  <summary> Handle Inputs </summary>
+  <br>
+</details>
+
+<details>
+  <summary> Update Cube </summary>
+  <br>
+</details>
+
+<details>
+  <summary> Render Cube </summary>
+  <br>
+</details>
