@@ -1,4 +1,4 @@
-// This code renders a 3D rotating cube using vertices and linear algebra.
+// This code renders a 3D rotating cube by using linear algebra.
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -72,13 +72,10 @@ void drawFace(int p0, int p1, int p2, int p3);
 //      --- Program ---
 
 void setup() {
-  pinMode(pin_potentiometer, INPUT);
+  pinMode(PIN_POTENTIOMETER, INPUT);
 
-  pinMode(pin_button_invert, INPUT_PULLUP);
-  pinMode(pin_button_solid, INPUT_PULLUP);
-
-  button_state_invert = digitalRead(pin_button_invert);
-  button_state_solid = digitalRead(pin_button_solid);
+  pinMode(PIN_BUTTON_INVERT, INPUT_PULLUP);
+  pinMode(PIN_BUTTON_SOLID, INPUT_PULLUP);
   
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     
