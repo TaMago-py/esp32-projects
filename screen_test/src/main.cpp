@@ -100,7 +100,7 @@ void loop() {
 
 // Handles the inputs from the potentiometer and the buttons
 void handleInputs() {
-  int potentiometer_value = analogRead(pin_potentiometer);
+  int potentiometer_value = analogRead(PIN_POTENTIOMETER);
 
   // I think 50 to 250 is a good range for the cube's distance. If its too low it suffers from distortion,
   // and if its too high, well, its too far to the screen to see.
@@ -110,7 +110,7 @@ void handleInputs() {
     invert = !invert;
   }
 
-  if (checkButtons(PIN_BUTTON_SOLID, last_state_button_solid)) {
+  if (checkButtons(PIN_BUTTON_SOLID, last_button_state_solid)) {
     solid = !solid;
   }
 }
