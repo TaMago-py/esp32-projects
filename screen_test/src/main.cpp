@@ -1,4 +1,5 @@
 // This code renders a 3D rotating cube using vertices and linear algebra.
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
