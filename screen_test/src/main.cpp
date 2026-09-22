@@ -24,8 +24,8 @@ const float vertices[8][3] = {
   {-20, -20, 20}, {20, -20, 20}, {20, 20, 20}, {-20, 20, 20} // Back face
 };
 
-// The faces of the cube drawn clockwise. It's clockwise, because on the screen, the 'y'
-// axis is positive going down. Also, the 'z' axis is positive when it's far from the screen.
+// The faces of the cube drawn clockwise.
+// Remember that on a screen the 'y' axis goes downwards.
 const int faces[6][4] {
   {0, 1, 2, 3},
   {1, 5, 6, 2},
