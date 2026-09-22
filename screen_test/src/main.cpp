@@ -63,13 +63,12 @@ void handleInputs();
 bool checkButtons(int pin, int &last_button_state);
 void updateCube();
 void renderCube();
-void drawFace(int p0, int p1, int p2, int p3);
 bool isFaceVisble(int vertex_0, int vertex_1, int vertex_2);
+void drawFace(int p0, int p1, int p2, int p3);
 
 //      --- Program ---
 
 void setup() {
-
   pinMode(pin_potentiometer, INPUT);
 
   pinMode(pin_button_invert, INPUT_PULLUP);
@@ -100,8 +99,12 @@ void loop() {
 
 //      --- Functions ---
 
+// Handles the inputs from the potentiometer and the buttons
 void handleInputs() {
   int potentiometer_value = analogRead(pin_potentiometer);
+
+  // I think 50 to 250 is a good range for the cube's distance. If its too low it suffers from distortion,
+  // and if its too high, well, its too far to the screen to see.
   distance = map(potentiometer_value, 0, 4095, 50, 250);
 
   if (checkButtons(PIN_BUTTON_INVERT, last_button_state_invert)) {
@@ -113,9 +116,12 @@ void handleInputs() {
   }
 }
 
+// Manages a button toggle system by checking its current and last state.
 bool checkButtons(int pin, int &last_button_state) {
   int current_button_state = digitalRead(pin);
 
+  // Only true if it was previously HIGH, and is now LOW. As the last state changes inmediately after the button
+  // is pressed, the condition can not be true until you unpress the button and press it again.
   bool pressed = (last_button_state == HIGH && current_button_state == LOW);
   
   last_button_state = current_button_state;
@@ -123,6 +129,8 @@ bool checkButtons(int pin, int &last_button_state) {
   return pressed;
 }
 
+// Updates the cubes angle using rotation matrices, and porjects the results onto the 2D space,
+// for it to can be shown on the screen.
 void updateCube() {
   for (int i = 0; i < 8; i++) {
 
@@ -141,7 +149,7 @@ void updateCube() {
     float y2 = y * cos(angle_x) - z1 * sin(angle_x);
     float z2 = y * sin(angle_x) + z1 * cos(angle_x);
 
-    // the 3D vectors projection into 2D.
+    // Projects in perspective the 3d vectors onto the 2D space.
     vertices2D[i][0] = (int)(x1 * 60 / (z2 + distance)) + 64;
     vertices2D[i][1] = (int)(y2 * 60 / (z2 + distance)) + 32;
   }
@@ -152,6 +160,7 @@ void updateCube() {
   angle_y += 0.02;
 }
 
+// Draws the cube on the screen using the already processed vertices given by the updateCube() funtion.
 void renderCube() {
   display.invertDisplay(invert);
   display.clearDisplay();
@@ -187,17 +196,11 @@ void renderCube() {
   display.display();
 }
 
-void drawFace(int p0, int p1, int p2, int p3) {
-          // Draws the face if it's visible.
-  display.drawLine(vertices2D[p0][0], vertices2D[p0][1], vertices2D[p1][0], vertices2D[p1][1], WHITE);
-  display.drawLine(vertices2D[p1][0], vertices2D[p1][1], vertices2D[p2][0], vertices2D[p2][1], WHITE);
-  display.drawLine(vertices2D[p2][0], vertices2D[p2][1], vertices2D[p3][0], vertices2D[p3][1], WHITE);
-  display.drawLine(vertices2D[p3][0], vertices2D[p3][1], vertices2D[p0][0], vertices2D[p0][1], WHITE);
-}
-
+// Checks if a face is visible by evaluating the cross point of two vectors. These vectors are formed by
+// three consecutive vertices from one of the cube's faces.
 bool visible(int vertex_0, int vertex_1, int vertex_2) {
 
-  // I take three consecutive vertex, and I made the vectors from the first one
+  // Takes three consecutive vertices, and draws the vectors from the first one
   // to the other two. 
   int x1 = vertices2D[vertex_1][0] - vertices2D[vertex_0][0];
   int y1 = vertices2D[vertex_1][1] - vertices2D[vertex_0][1];
@@ -210,4 +213,12 @@ bool visible(int vertex_0, int vertex_1, int vertex_2) {
   long cross_point = x1 * y2 - x2 * y1;
 
   return cross_point >= 0;
+}
+
+// Draws the cube's faces if they are visible. This function only executes if the solid mode is activated.
+void drawFace(int p0, int p1, int p2, int p3) {
+  display.drawLine(vertices2D[p0][0], vertices2D[p0][1], vertices2D[p1][0], vertices2D[p1][1], WHITE);
+  display.drawLine(vertices2D[p1][0], vertices2D[p1][1], vertices2D[p2][0], vertices2D[p2][1], WHITE);
+  display.drawLine(vertices2D[p2][0], vertices2D[p2][1], vertices2D[p3][0], vertices2D[p3][1], WHITE);
+  display.drawLine(vertices2D[p3][0], vertices2D[p3][1], vertices2D[p0][0], vertices2D[p0][1], WHITE);
 }
