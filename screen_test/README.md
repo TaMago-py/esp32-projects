@@ -11,13 +11,11 @@
 
 ### What does it do?
 
-Displays a __rotating 3D cube__ on the screen. You can __interact__ with with the animation via buttons and potentiometer.
+Displays a __rotating 3D cube__ on the screen. You can __interact__ with the animation via buttons and potentiometer, which are as follow:
 
-The interactions with the program are as follows:
-
-+ ___Button___ on pin 18 toggles __inverted__ colors.
-+ ___Button___ on pin 19 toggles the __solid__ mode for the cube.
-+ ___Potentiometer___ on pin 35 serves to change the cube's __distance__ to the screen.
++ Toggle __inverted__ colors via button on pin 18.
++ Toggle __solid__ cube mode via button on pin 19.
++ Adjust the __distance__ from the cube via potentiometer on pin 35.
 
 ### Tools
 
@@ -29,12 +27,12 @@ The interactions with the program are as follows:
 
 ### specifications
 
-This program was __made__ with:
+Built with:
 
 + Adafruit's ___SSD1306___ oled screen.
 + Espressif's ___ESP-WROOM-32___.
-
-I used ___PlatformIO___ as my framework, using ___Arduino___'s library.
++ ___PlatformIO___'s framework.
++ ___Arduino___'s library.
 
 ### Procedure
 
@@ -59,8 +57,5 @@ First I draw the 3D space as it is supposed to be in a screen, with the $y$ axis
 
 <img width="80%" alt="3D-space" src="https://github.com/user-attachments/assets/e9e14c44-cc3f-4b13-a335-71352c8ee709"/>
 
-
-
-  
 </details>
 
