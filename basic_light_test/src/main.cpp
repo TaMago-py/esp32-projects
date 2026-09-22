@@ -1,19 +1,37 @@
+// This program controls a blinking led.
+
 #include <Arduino.h>
 
-const int led = 18;
+//      --- Contants ---
+
+const int PIN_LED = 18;
+
+//      --- Globals ---
+
+int blinking_delay = 1000;
+
+//      --- Function Declarations ---
+
+void blink(int pin, int blinking_delay);
+
+//      --- Program ---
 
 void setup() {
-
-  pinMode(led, OUTPUT);
+  pinMode(PIN_LED, OUTPUT);
 }
 
 void loop() {
+  blink(PIN_LED, blinking_delay);
+}
 
-  digitalWrite(led, HIGH);
+//      --- Functions ---
 
-  delay(1000);
+void blink(int pin, int blinking_delay) {
+  digitalWrite(pin, HIGH);
 
-  digitalWrite(led, LOW);
+  delay(blinking_delay);
 
-  delay(1000);
+  digitalWrite(pin, LOW);
+
+  delay(blinking_delay);
 }
