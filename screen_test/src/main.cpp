@@ -61,8 +61,10 @@ int distance = 100;
 // So... I just noticed that Arduino's function are in camelCase. Maybe I should do the same.
 void handleInputs();
 bool checkButtons(int pin, int &last_button_state);
+
 void updateCube();
 void renderCube();
+
 bool isFaceVisble(int vertex_0, int vertex_1, int vertex_2);
 void drawFace(int p0, int p1, int p2, int p3);
 
