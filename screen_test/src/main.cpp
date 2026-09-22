@@ -15,19 +15,13 @@ const int PIN_BUTTON_SOLID = 19;
 
 const int PIN_POTENTIOMETER = 35;
 
-//      --- Fuctions ---
+//      --- 3D Cube Data ---
 
-bool visible(int vertex_0, int vertex_1, int vertex_2);
-
-//      --- Cube ---
-
-// vertices of a cube.
+// 3D cube's vertices.
 const float vertices[8][3] = {
   {-20, -20, -20}, {20, -20, -20}, {20, 20, -20}, {-20, 20, -20}, // Front face
   {-20, -20, 20}, {20, -20, 20}, {20, 20, 20}, {-20, 20, 20} // Back face
 };
-
-int vertices2D[8][2];
 
 // The faces of the cube drawn clockwise. it's clockwise, because in the screen, the 'y'
 // axis is positive going down. also, the 'z' axis is positive when it's far the screen.
@@ -40,7 +34,10 @@ const int faces[6][4] {
   {4, 5, 1, 0},
 };
 
-//      --- Initial Configuration ---
+// Cube's vertice's projection on the 2D space.
+int vertices2D[8][2];
+
+//      --- Globals ---
 
 // Not sure if I must call it "screen" or "display" tbh. ok I looked up, it's display.
 Adafruit_SSD1306 display(WIDTH, HEIGHT, &Wire, -1);
@@ -54,13 +51,20 @@ bool invert = false;
 // "true" for a faced cube, 'false' for just the edges.
 bool solid = false;
 
-int button_state_invert;
 int last_button_state_invert;
-
-int button_state_solid;
 int last_button_state_solid;
 
-int distance;
+int distance = 100;
+
+//      --- Fuction Declarations ---
+
+// So... I just noticed that Arduino's function are in camelCase. Maybe I should do the same.
+void handleInputs();
+bool checkButtons(int pin, int &last_button_state);
+void updateCube();
+void renderCube();
+void drawFace(int p0, int p1, int p2, int p3);
+bool isFaceVisble(int vertex_0, int vertex_1, int vertex_2);
 
 //      --- Program ---
 
@@ -86,30 +90,40 @@ void setup() {
 }
 
 void loop() {
+  handleInputs();
+  
+  updateCube();
+  renderCube();
 
-  display.invertDisplay(invert);
-  
-  display.clearDisplay();
-  
+  delay(5);
+}
+
+//      --- Functions ---
+
+void handleInputs() {
   int potentiometer_value = analogRead(pin_potentiometer);
   distance = map(potentiometer_value, 0, 4095, 50, 250);
-  
-  last_button_state_invert = button_state_invert;
-  last_button_state_solid = button_state_solid;
 
-  button_state_invert = digitalRead(pin_button_invert);
-  button_state_solid = digitalRead(pin_button_solid);
-
-  if (last_button_state_invert == HIGH && button_state_invert == LOW) {
-
+  if (checkButtons(PIN_BUTTON_INVERT, last_button_state_invert)) {
     invert = !invert;
   }
 
-  if (last_button_state_solid == HIGH && button_state_solid == LOW) {
-
+  if (checkButtons(PIN_BUTTON_SOLID, last_state_button_solid)) {
     solid = !solid;
   }
+}
 
+bool checkButtons(int pin, int &last_button_state) {
+  int current_button_state = digitalRead(pin);
+
+  bool pressed = (last_button_state == HIGH && current_button_state == LOW);
+  
+  last_button_state = current_button_state;
+
+  return pressed;
+}
+
+void updateCube() {
   for (int i = 0; i < 8; i++) {
 
     // The vectors in a matrix goes [x y z]
@@ -131,6 +145,16 @@ void loop() {
     vertices2D[i][0] = (int)(x1 * 60 / (z2 + distance)) + 64;
     vertices2D[i][1] = (int)(y2 * 60 / (z2 + distance)) + 32;
   }
+
+  // Modifying the angles. don't know why, but if both are the same value the animation
+  // comes out laggy in a point. More like a little jump.
+  angle_x += 0.03;
+  angle_y += 0.02;
+}
+
+void renderCube() {
+  display.invertDisplay(invert);
+  display.clearDisplay();
   
   if (solid) {
     
@@ -143,12 +167,7 @@ void loop() {
       int p3 = faces[j][3];
       
       if (visible(p0, p1, p2)) {
-        
-        // Draws the face if it's visible.
-        display.drawLine(vertices2D[p0][0], vertices2D[p0][1], vertices2D[p1][0], vertices2D[p1][1], WHITE);
-        display.drawLine(vertices2D[p1][0], vertices2D[p1][1], vertices2D[p2][0], vertices2D[p2][1], WHITE);
-        display.drawLine(vertices2D[p2][0], vertices2D[p2][1], vertices2D[p3][0], vertices2D[p3][1], WHITE);
-        display.drawLine(vertices2D[p3][0], vertices2D[p3][1], vertices2D[p0][0], vertices2D[p0][1], WHITE);
+        drawFace(p0, p1, p2, p3);
       }
     }
   }
@@ -166,13 +185,14 @@ void loop() {
   }
   
   display.display();
-  
-  // Modifying the angles. don't know why, but if both are the same value the animation
-  // comes out laggy in a point. More like a little jump.
-  angle_x += 0.03;
-  angle_y += 0.02;
+}
 
-  delay(5);
+void drawFace(int p0, int p1, int p2, int p3) {
+          // Draws the face if it's visible.
+  display.drawLine(vertices2D[p0][0], vertices2D[p0][1], vertices2D[p1][0], vertices2D[p1][1], WHITE);
+  display.drawLine(vertices2D[p1][0], vertices2D[p1][1], vertices2D[p2][0], vertices2D[p2][1], WHITE);
+  display.drawLine(vertices2D[p2][0], vertices2D[p2][1], vertices2D[p3][0], vertices2D[p3][1], WHITE);
+  display.drawLine(vertices2D[p3][0], vertices2D[p3][1], vertices2D[p0][0], vertices2D[p0][1], WHITE);
 }
 
 bool visible(int vertex_0, int vertex_1, int vertex_2) {
