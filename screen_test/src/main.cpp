@@ -24,8 +24,8 @@ const float vertices[8][3] = {
   {-20, -20, 20}, {20, -20, 20}, {20, 20, 20}, {-20, 20, 20} // Back face
 };
 
-// The faces of the cube drawn clockwise. it's clockwise, because in the screen, the 'y'
-// axis is positive going down. also, the 'z' axis is positive when it's far the screen.
+// The faces of the cube drawn clockwise. It's clockwise, because on the screen, the 'y'
+// axis is positive going down. Also, the 'z' axis is positive when it's far from the screen.
 const int faces[6][4] {
   {0, 1, 2, 3},
   {1, 5, 6, 2},
@@ -35,12 +35,12 @@ const int faces[6][4] {
   {4, 5, 1, 0},
 };
 
-// Cube's vertice's projection on the 2D space.
+// Cube's vertices projection on the 2D space.
 int vertices2D[8][2];
 
 //      --- Globals ---
 
-// Not sure if I must call it "screen" or "display" tbh. ok I looked up, it's display.
+// Not sure if I must call it "screen" or "display" tbh. Ok I looked up, it's display.
 Adafruit_SSD1306 display(WIDTH, HEIGHT, &Wire, -1);
 
 float angle_x = 0.0;
@@ -57,7 +57,7 @@ int last_button_state_solid;
 
 int distance = 100;
 
-//      --- Fuction Declarations ---
+//      --- Function Declarations ---
 
 // So... I just noticed that Arduino's function are in camelCase. Maybe I should do the same.
 void handleInputs();
@@ -119,7 +119,7 @@ void handleInputs() {
 bool checkButtons(int pin, int &last_button_state) {
   int current_button_state = digitalRead(pin);
 
-  // Only true if it was previously HIGH, and is now LOW. As the last state changes inmediately after the button
+  // Only true if it was previously HIGH, and is now LOW. As the last state changes immediately after the button
   // is pressed, the condition can not be true until you unpress the button and press it again.
   bool pressed = (last_button_state == HIGH && current_button_state == LOW);
   
@@ -128,8 +128,8 @@ bool checkButtons(int pin, int &last_button_state) {
   return pressed;
 }
 
-// Updates the cubes angle using rotation matrices, and porjects the results onto the 2D space,
-// for it to can be shown on the screen.
+// Updates the cube's angle using rotation matrices, and projects the results onto the 2D space,
+// so it can be shown on the screen.
 void updateCube() {
   for (int i = 0; i < 8; i++) {
     // The vectors in a matrix goes [x y z]
@@ -158,7 +158,7 @@ void updateCube() {
   angle_y += 0.02;
 }
 
-// Draws the cube on the screen using the already processed vertices given by the updateCube() funtion.
+// Draws the cube on the screen using the already processed vertices given by the updateCube() function.
 void renderCube() {
   display.invertDisplay(invert);
   display.clearDisplay();
