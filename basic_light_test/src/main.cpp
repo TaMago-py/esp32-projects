@@ -26,6 +26,7 @@ void loop() {
 
 //      --- Functions ---
 
+// Blinks a led, taking as inputs the led's pin and the delay between states.
 void blink(int pin, int blinking_delay) {
   digitalWrite(pin, HIGH);
 
