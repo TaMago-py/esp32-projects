@@ -78,10 +78,9 @@ void setup() {
   pinMode(PIN_BUTTON_SOLID, INPUT_PULLUP);
   
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-    
     for(;;);
   }
-    
+  
     // I added this because sometimes the screen just stayed white.
     // It happened when I changed 'invert' from 'y' to 'n'
     display.clearDisplay();
@@ -133,7 +132,6 @@ bool checkButtons(int pin, int &last_button_state) {
 // for it to can be shown on the screen.
 void updateCube() {
   for (int i = 0; i < 8; i++) {
-
     // The vectors in a matrix goes [x y z]
     float x = vertices[i][0];
     float y = vertices[i][1];
@@ -166,9 +164,7 @@ void renderCube() {
   display.clearDisplay();
   
   if (solid) {
-    
     for (int j = 0; j < 6; j++) {
-      
       // Takes the vertices forming the actual face.
       int p0 = faces[j][0];
       int p1 = faces[j][1];
@@ -182,7 +178,6 @@ void renderCube() {
   }
   
   else {
-    
     for (int i = 0; i < 4; i++) {
   
     // Drawing every edge of the box.
@@ -199,7 +194,6 @@ void renderCube() {
 // Checks if a face is visible by evaluating the cross point of two vectors. These vectors are formed by
 // three consecutive vertices from one of the cube's faces.
 bool visible(int vertex_0, int vertex_1, int vertex_2) {
-
   // Takes three consecutive vertices, and draws the vectors from the first one
   // to the other two. 
   int x1 = vertices2D[vertex_1][0] - vertices2D[vertex_0][0];
