@@ -66,7 +66,7 @@ bool checkButtons(int pin, int &last_button_state);
 void updateCube();
 void renderCube();
 
-bool isFaceVisble(int vertex_0, int vertex_1, int vertex_2);
+bool isFaceVisible(int vertex_0, int vertex_1, int vertex_2);
 void drawFace(int p0, int p1, int p2, int p3);
 
 //      --- Program ---
