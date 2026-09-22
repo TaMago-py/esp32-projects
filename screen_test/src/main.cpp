@@ -171,7 +171,7 @@ void renderCube() {
       int p2 = faces[j][2];
       int p3 = faces[j][3];
       
-      if (visible(p0, p1, p2)) {
+      if (isFaceVisible(p0, p1, p2)) {
         drawFace(p0, p1, p2, p3);
       }
     }
