@@ -193,7 +193,7 @@ void renderCube() {
 
 // Checks if a face is visible by evaluating the cross point of two vectors. These vectors are formed by
 // three consecutive vertices from one of the cube's faces.
-bool visible(int vertex_0, int vertex_1, int vertex_2) {
+bool isFaceVisible(int vertex_0, int vertex_1, int vertex_2) {
   // Takes three consecutive vertices, and draws the vectors from the first one
   // to the other two. 
   int x1 = vertices2D[vertex_1][0] - vertices2D[vertex_0][0];
