@@ -59,7 +59,7 @@ int distance = 100;
 
 //      --- Function Declarations ---
 
-// So... I just noticed that Arduino's function are in camelCase. Maybe I should do the same.
+// So... I just noticed that Arduino's functions are all in camelCase. Let's keep the style.
 void handleInputs();
 bool checkButtons(int pin, int &last_button_state);
 
