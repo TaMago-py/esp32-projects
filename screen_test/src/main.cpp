@@ -52,8 +52,8 @@ bool invert = false;
 // "true" for a faced cube, 'false' for just the edges.
 bool solid = false;
 
-int last_button_state_invert;
-int last_button_state_solid;
+int last_button_state_invert = HIGH;
+int last_button_state_solid = HIGH;
 
 int distance = 100;
 
