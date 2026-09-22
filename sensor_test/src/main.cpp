@@ -1,12 +1,18 @@
 #include <Arduino.h>
 
-const int light_sensor = 23;
-const int led_pin = 18;
+//      --- Constants ---
+
+const int PIN_SENSOR = 23;
+const int PIN_LED = 18;
+
+//      --- Globals ---
 
 int stable_state = LOW;
 int last_state = LOW;
 unsigned long last_change = 0;
 const int filter = 500;
+
+//      --- Program ---
 
 void setup()
 {
