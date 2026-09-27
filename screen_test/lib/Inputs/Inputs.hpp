@@ -3,10 +3,10 @@
 
 //          --- Public Variables ---
 
-const int PIN_BUTTON_INVERT = 18;
-const int PIN_BUTTON_SOLID = 19;
+constexpr int PIN_BUTTON_INVERT = 18;
+constexpr int PIN_BUTTON_SOLID = 19;
 
-const int PIN_POTENTIOMETER = 35;
+constexpr int PIN_POTENTIOMETER = 35;
 
 //          --- Public Functions ---
 
