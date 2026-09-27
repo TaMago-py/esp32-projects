@@ -1,3 +1,5 @@
+// This library renders a rotating 3d cube into an SSD1306 OLED display
+
 #include <Adafruit_GFX.h>
 #include <math.h>
 #include "Cube.hpp"
@@ -26,7 +28,6 @@ int vertices2D[8][2];
 
 //      --- Public variables ---
 
-
 // 'true' for white screen, 'false' for black screen (Inputs)
 bool invert = false;
 
@@ -36,13 +37,17 @@ bool solid = false;
 // Controls the distance from the cube (Inputs)
 int distance = 100;
 
-//          --- private Variables ---
+//      --- private Variables ---
 
 float angle_x = 0.0;
 float angle_y = 0.0;
 
-//      --- Public Functions ---
+//      --- Private Functions Declarations ---
 
+bool isFaceVisible(int vertex_0, int vertex_1, int vertex_2);
+void drawFace(Adafruit_SSD1306 &display, int p0, int p1, int p2, int p3);
+
+//      --- Public Functions ---
 
 /** 
  * @brief Updates the cube's angle using rotation matrices, 
@@ -70,8 +75,7 @@ void updateCube() {
     vertices2D[i][1] = (int)(y2 * 60 / (z2 + distance)) + 32;
   }
 
-  // Modifying the angles. don't know why, but if both are the same value the animation
-  // comes out laggy in a point. More like a little jump.
+  // Modifying the angles. Different values to minimize gimbal locks.
   angle_x += 0.03;
   angle_y += 0.02;
 }
@@ -104,7 +108,6 @@ void renderCube(Adafruit_SSD1306 &display) {
     for (int i = 0; i < 4; i++) {
   
     // Drawing every edge of the box.
-    // I want to try making some other geometrical figures too.
     display.drawLine(vertices2D[i][0], vertices2D[i][1], vertices2D[(i + 1) % 4][0], vertices2D[(i + 1) % 4][1], WHITE);
     display.drawLine(vertices2D[i + 4][0], vertices2D[i + 4][1], vertices2D[((i + 1) % 4) + 4][0], vertices2D[((i + 1) % 4) + 4][1], WHITE);
     display.drawLine(vertices2D[i][0], vertices2D[i][1], vertices2D[i + 4][0], vertices2D[i + 4][1], WHITE);
