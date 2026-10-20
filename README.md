@@ -8,7 +8,7 @@ Hope I don't __fry it__ by __accident__.
 
 In this repository I'll be uploading some __tests__ I make to __learn__ how to use it.
 
-Also, there's more specific __documentation__ for each test in its respective __folder__. (under construction)
+As these are just some tests, the logic is very simple so... I decided that I'm __not doing any additional documentation__ for any of these, as it would take me __plenty of time__ that I can spend in other projects.
 
 ## projects
 
@@ -45,6 +45,8 @@ I discovered I __liked__ the __screen__ very much, it's __funny__ to use, so I m
 
 I used some ___linear algebra___ to make a __rotating cube__. The essentials were the __rotation__ of the vertices and their __projections__ on the 2D screen. Speaking of that, I went to the __regional math olympiads__! I will upload __my results__ once i have them 😼
 
+Update: I couldn't make it to the finals, but I think I have __two out of four__ questions right! (better than the last year) I couln't get my real score though...
+
 <video src="https://github.com/user-attachments/assets/f1aafe3c-6bb0-4dcb-a77b-83ce36241016"></video>
 
 ### buzzer_test
@@ -72,6 +74,7 @@ Here I tried the ___fotorresistor sensor___.
 ### button-potentiometer_test
 
 I just learned how to use the __buttons__ and the ___potentiometer___ to __interact__ with the esp32, and that just means my next project might be a __game__ 😼
+
 
 Anyway, here I use them to __interact__ with the rgb led's __colors__.
 
