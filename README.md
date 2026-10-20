@@ -41,9 +41,11 @@ First, I simply printed a "___Hello world___" on the screen.
 
 <img width="50%" alt="Hello world" src="https://github.com/user-attachments/assets/1cde02f0-7781-40e6-8036-6a82330577d8"/>
 
-I discovered I __liked__ the __screen__ very much, it's __funny__ to use, so I made something more __complex__.
+I __liked__ the __screen__, it's interesting to use, so I made something more __complex__.
 
-I used some ___linear algebra___ to make a __rotating cube__. The essentials were the __rotation__ of the vertices and their __projections__ on the 2D screen. Speaking of that, I went to the __regional math olympiads__! I will upload __my results__ once i have them 😼
+I used some ___linear algebra___ to make a __rotating cube__. The essentials were the __rotation__ of the vertices and their __projections__ on the 2D screen. I also used __cross product__ fpr the solid mode
+
+Speaking of that, I went to the __regional math olympiads__! I will upload __my results__ once i have them 😼
 
 Update: I couldn't make it to the finals, but I think I have __two out of four__ questions right! (better than the last year) I couln't get my real score though...
 
@@ -74,7 +76,6 @@ Here I tried the ___fotorresistor sensor___.
 ### button-potentiometer_test
 
 I just learned how to use the __buttons__ and the ___potentiometer___ to __interact__ with the esp32, and that just means my next project might be a __game__ 😼
-
 
 Anyway, here I use them to __interact__ with the rgb led's __colors__.
 
