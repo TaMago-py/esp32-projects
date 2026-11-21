@@ -19,11 +19,11 @@ As these are just some tests, the logic is very simple so... I decided that I'm 
 
 ### basic_light_test
 
-Just a __light__, turning __on__ and __off__. I also made this one for seeing if the ___esp32___ was in __good condition__. I'm learning the basics with the "__random nerd tutorials__" website.
+Just a __light__, turning __on__ and __off__. I also made this one for seeing if the ___esp32___ was in __good condition__. 
 
-I can't scale the video, ___wait___.
+I'm learning the basics with the "__random nerd tutorials__" website.
 
-<video src="https://github.com/user-attachments/assets/61d83124-657f-49e2-863e-b82059242ff7"></video>
+https://github.com/user-attachments/assets/61d83124-657f-49e2-863e-b82059242ff7
 
 ### rgb_light_video
 
@@ -33,7 +33,7 @@ If a color reaches a value of 255, it starts to __decrease__ while the next numb
 
 This way, it goes from __red__ to __green__, from __green__ to __blue__ and from __blue__ to __red__.
 
-<video src="https://github.com/user-attachments/assets/742720c2-be79-4923-9f10-aa77bf7c571c"></video>
+https://github.com/user-attachments/assets/742720c2-be79-4923-9f10-aa77bf7c571c
 
 ### screen_test
 
@@ -47,9 +47,9 @@ I used some ___linear algebra___ to make a __rotating cube__. The essentials wer
 
 Speaking of that, I went to the __regional math olympiads__! I will upload __my results__ once i have them 😼
 
-Update: I couldn't make it to the finals, but I think I have __two out of four__ questions right! (better than the last year) I couln't get my real score though...
+Update: I couldn't make it to the finals, but I think I have __two out of four__ questions right! (better than the last year) I couldn't get my real score though...
 
-<video src="https://github.com/user-attachments/assets/f1aafe3c-6bb0-4dcb-a77b-83ce36241016"></video>
+https://github.com/user-attachments/assets/f1aafe3c-6bb0-4dcb-a77b-83ce36241016
 
 ### buzzer_test
 
@@ -61,7 +61,7 @@ here's my __favorite__ one. It doesn't have lyrics, but I made a __banner__ with
 
 Sorry if the volume is too low.
 
-<video src="https://github.com/user-attachments/assets/08abfbb8-1e71-42f5-a69b-dad7a01b6306"></video>
+https://github.com/user-attachments/assets/08abfbb8-1e71-42f5-a69b-dad7a01b6306
 
 ### sensor_test
 
@@ -69,9 +69,9 @@ A simple test that works with any ___digital sensor___... ___I think___. I used 
 
 I also wanted to try the '___millis()___' function, so, I made that the led __changes__ its state after __half a second__ the sensor is __activated__.
 
-Here I tried the ___fotorresistor sensor___.
+Here I tried the ___photoresistor sensor___.
 
-<video src="https://github.com/user-attachments/assets/a2a652c4-89d1-4543-9be4-3d93a7e78c2d"></video>
+https://github.com/user-attachments/assets/a2a652c4-89d1-4543-9be4-3d93a7e78c2d
 
 ### button-potentiometer_test
 
@@ -81,7 +81,7 @@ Anyway, here I use them to __interact__ with the rgb led's __colors__.
 
 I can __change__ a color's __value__ by pushing its respective button and using the potentiometer.
 
-<video src="https://github.com/user-attachments/assets/90aaab43-b3ab-49b1-8dd5-ccf0132efcc7"></video>
+https://github.com/user-attachments/assets/90aaab43-b3ab-49b1-8dd5-ccf0132efcc7
 
 ### Relay and connectivity
 
